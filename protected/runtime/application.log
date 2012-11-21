@@ -58,3 +58,40 @@ Stack trace:
 #26 {main}
 REQUEST_URI=/index.php?r=gii/default/login
 ---
+2012/11/21 12:49:08 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blog.user' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `user`.
+in Z:\home\blog\www\index.php (13)
+2012/11/21 12:49:26 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blog.user' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `user`.
+in Z:\home\blog\www\index.php (13)
+2012/11/21 12:54:55 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blog.user' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `user`.
+in Z:\home\blog\www\index.php (13)
+2012/11/21 12:55:09 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blog.user' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `user`.
+in Z:\home\blog\www\index.php (13)
+2012/11/21 13:39:26 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blog.user' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `user`.
+in Z:\home\blog\www\index.php (13)
+2012/11/21 13:49:15 [error] [exception.CException] exception 'CException' with message 'The asset "Z:\home\blog\www\yii\framework\zii\widgets\assets" to be published does not exist.' in Z:\home\blog\www\yii\framework\web\CAssetManager.php:255
+Stack trace:
+#0 Z:\home\blog\www\yii\framework\zii\widgets\CListView.php(188): CAssetManager->publish('Z:\home\blog\ww...')
+#1 Z:\home\blog\www\yii\framework\web\CBaseController.php(148): CListView->init()
+#2 Z:\home\blog\www\yii\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#3 Z:\home\blog\www\protected\views\post\index.php(20): CBaseController->widget('zii.widgets.CLi...', Array)
+#4 Z:\home\blog\www\yii\framework\web\CBaseController.php(127): require('Z:\home\blog\ww...')
+#5 Z:\home\blog\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('Z:\home\blog\ww...', Array, true)
+#6 Z:\home\blog\www\yii\framework\web\CController.php(870): CBaseController->renderFile('Z:\home\blog\ww...', Array, true)
+#7 Z:\home\blog\www\yii\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#8 Z:\home\blog\www\protected\controllers\PostController.php(128): CController->render('index', Array)
+#9 Z:\home\blog\www\yii\framework\web\actions\CInlineAction.php(50): PostController->actionIndex()
+#10 Z:\home\blog\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 Z:\home\blog\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 Z:\home\blog\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 Z:\home\blog\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 Z:\home\blog\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 Z:\home\blog\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 Z:\home\blog\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#17 Z:\home\blog\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 Z:\home\blog\www\yii\framework\web\CWebApplication.php(283): CController->run('')
+#19 Z:\home\blog\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('post')
+#20 Z:\home\blog\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 Z:\home\blog\www\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php?r=post
+---
