@@ -196,3 +196,57 @@ Stack trace:
 #22 {main}
 REQUEST_URI=/index.php?r=post
 ---
+2012/11/28 15:10:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Запрашиваемая страница не существует.' in Z:\home\blog\www\protected\controllers\PostController.php:71
+Stack trace:
+#0 Z:\home\blog\www\protected\controllers\PostController.php(49): PostController->loadModel()
+#1 Z:\home\blog\www\yii\framework\web\actions\CInlineAction.php(50): PostController->actionView()
+#2 Z:\home\blog\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 Z:\home\blog\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 Z:\home\blog\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 Z:\home\blog\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 Z:\home\blog\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 Z:\home\blog\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 Z:\home\blog\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#9 Z:\home\blog\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 Z:\home\blog\www\yii\framework\web\CWebApplication.php(283): CController->run('view')
+#11 Z:\home\blog\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('post/view')
+#12 Z:\home\blog\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 Z:\home\blog\www\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=post/view&id=3&title=Welcome%21
+---
+2012/11/28 15:33:15 [error] [exception.CDbException] exception 'CDbException' with message 'Relation "commentCount" is not defined in active record class "Post".' in Z:\home\blog\www\yii\framework\db\ar\CActiveFinder.php:216
+Stack trace:
+#0 Z:\home\blog\www\yii\framework\db\ar\CActiveFinder.php(49): CActiveFinder->buildJoinTree(Object(CJoinElement), 'commentCount')
+#1 Z:\home\blog\www\yii\framework\db\ar\CActiveRecord.php(1543): CActiveFinder->__construct(Object(Post), 'commentCount')
+#2 Z:\home\blog\www\yii\framework\web\CActiveDataProvider.php(179): CActiveRecord->count(Object(CDbCriteria))
+#3 Z:\home\blog\www\yii\framework\web\CDataProvider.php(193): CActiveDataProvider->calculateTotalItemCount()
+#4 Z:\home\blog\www\yii\framework\web\CActiveDataProvider.php(129): CDataProvider->getTotalItemCount()
+#5 Z:\home\blog\www\yii\framework\web\CDataProvider.php(137): CActiveDataProvider->fetchData()
+#6 Z:\home\blog\www\yii\framework\zii\widgets\CBaseListView.php(108): CDataProvider->getData()
+#7 Z:\home\blog\www\yii\framework\zii\widgets\CListView.php(182): CBaseListView->init()
+#8 Z:\home\blog\www\yii\framework\web\CBaseController.php(148): CListView->init()
+#9 Z:\home\blog\www\yii\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#10 Z:\home\blog\www\protected\views\post\index.php(19): CBaseController->widget('zii.widgets.CLi...', Array)
+#11 Z:\home\blog\www\yii\framework\web\CBaseController.php(127): require('Z:\home\blog\ww...')
+#12 Z:\home\blog\www\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('Z:\home\blog\ww...', Array, true)
+#13 Z:\home\blog\www\yii\framework\web\CController.php(870): CBaseController->renderFile('Z:\home\blog\ww...', Array, true)
+#14 Z:\home\blog\www\yii\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#15 Z:\home\blog\www\protected\controllers\PostController.php(159): CController->render('index', Array)
+#16 Z:\home\blog\www\yii\framework\web\actions\CInlineAction.php(50): PostController->actionIndex()
+#17 Z:\home\blog\www\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#18 Z:\home\blog\www\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#19 Z:\home\blog\www\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#20 Z:\home\blog\www\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#21 Z:\home\blog\www\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#22 Z:\home\blog\www\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#23 Z:\home\blog\www\yii\framework\web\CController.php(292): CFilterChain->run()
+#24 Z:\home\blog\www\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 Z:\home\blog\www\yii\framework\web\CWebApplication.php(283): CController->run('index')
+#26 Z:\home\blog\www\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('post/index')
+#27 Z:\home\blog\www\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#28 Z:\home\blog\www\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/index.php?r=post/index
+HTTP_REFERER=http://blog/index.php?r=post/view&id=2&title=Welcome%21
+---
