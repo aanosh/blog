@@ -52,6 +52,7 @@ class SiteController extends Controller
 	public function actionContact()
 	{
 		$model=new ContactForm;
+                var_dump($model);exit;
 		if(isset($_POST['ContactForm']))
 		{
 			$model->attributes=$_POST['ContactForm'];

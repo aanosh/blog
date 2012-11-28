@@ -58,7 +58,8 @@ class Post extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-		);
+                    'author'=>  array(self::BELONGS_TO,'User','author_id'),
+                );
 	}
 
 	/**
@@ -102,4 +103,11 @@ class Post extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+        public function getUrl() {
+            return Yii::app()->createUrl('post/view',array(
+                'id'=>  $this->id,
+                'title'=>  $this->title,
+            ));
+        }
+        
 }

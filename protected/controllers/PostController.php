@@ -122,10 +122,15 @@ class PostController extends Controller
 	 */
 	public function actionIndex()
 	{
+<<<<<<< HEAD
                 
 		$dataProvider=new CActiveDataProvider('Post');
                 $dat=$dataProvider->getData();
    		$this->render('index',array(
+=======
+ 		$dataProvider=new CActiveDataProvider('Post');
+               	$this->render('index',array(
+>>>>>>> 21edf72ef98444e0bfe6e9b68113d89ab9a87257
 			'dataProvider'=>$dataProvider,
 		));
 	}
