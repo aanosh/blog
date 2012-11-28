@@ -4,6 +4,7 @@
 ?>
 
 <div class="view">
+         <?php var_dump($data->commentCount); ?>
         <b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
 	<?php echo CHtml::link(CHtml::encode($data->id), $data->url); ?>
 	<br />
