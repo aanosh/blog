@@ -42,14 +42,12 @@ class Comment extends CActiveRecord
 	{
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
-		return array(
-			array('status, create_time, post_id', 'numerical', 'integerOnly'=>true),
-			array('author, email, url', 'length', 'max'=>128),
-			array('content', 'safe'),
-			// The following rule is used by search().
-			// Please remove those attributes that should not be searched.
-			array('id, content, status, create_time, author, email, url, post_id', 'safe', 'on'=>'search'),
-		);
+                return array(
+                    array('content, author, email', 'required'),
+                    array('author, email, url', 'length', 'max'=>128),
+                    array('email','email'),
+                    array('url','url'),
+                );
 	}
 
 	/**
@@ -68,16 +66,17 @@ class Comment extends CActiveRecord
 	 */
 	public function attributeLabels()
 	{
-		return array(
-			'id' => 'ID',
-			'content' => 'Content',
-			'status' => 'Status',
-			'create_time' => 'Create Time',
-			'author' => 'Author',
-			'email' => 'Email',
-			'url' => 'Url',
-			'post_id' => 'Post',
-		);
+
+            return array(
+                'id' => 'Id',
+                'content' => 'Comment',
+                'status' => 'Status',
+                'create_time' => 'Create Time',
+                'author' => 'Name',
+                'email' => 'Email',
+                'url' => 'Website',
+                'post_id' => 'Post',
+            );	
 	}
 
 	/**
@@ -104,4 +103,16 @@ class Comment extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+        
+        protected function beforeSave()
+        {
+            if(parent::beforeSave())
+            {
+                if($this->isNewRecord)
+                    $this->create_time=time();
+                return true;
+            }
+            else
+                return false;
+        }
 }
