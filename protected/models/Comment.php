@@ -115,4 +115,12 @@ class Comment extends CActiveRecord
             else
                 return false;
         }
+        
+        
+        public function getUrl($post=null)
+	{
+		if($post===null)
+			$post=$this->post;
+		return $post->url.'#c'.$this->id;
+	}
 }

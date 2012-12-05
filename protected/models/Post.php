@@ -64,6 +64,7 @@ class Post extends CActiveRecord
                     'author'=>  array(self::BELONGS_TO,'User','author_id'),
                     'commentCount'=>  array(self::STAT,'Comment','post_id',
                            'condition'=>'status='.Comment::STATUS_APPROVED),
+                    'comments'=>array(self::HAS_MANY,'Comment','post_id'),
                 );
 	}
 
