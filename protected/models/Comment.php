@@ -123,4 +123,6 @@ class Comment extends CActiveRecord
 			$post=$this->post;
 		return $post->url.'#c'.$this->id;
 	}
+        
+ 
 }
